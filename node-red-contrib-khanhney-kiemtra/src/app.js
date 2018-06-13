@@ -10,13 +10,21 @@ module.exports = function(RED) {
         this.on('input', function(msg) {
             var result = {};
             var check_temp = false, check_ec = false, check_tds = false, check_humi = false;
-            if (node.TEMP >= 20 && node.TEMP <= 40) return check_temp = true;
-            if (node.EC >= 0.5 && node.EC <= 2.4) return check_ec = true;
-            if (node.TDS >= 280 && node.TDS <= 1400) return check_tds = true;
-            if (node.HUMI >= 40 && node.HUMI <= 80) return check_humi = true;
+            if (node.TEMP >= 20 && node.TEMP <= 40) {
+                check_temp = true;
+            }
+            if (node.EC >= 0.5 && node.EC <= 2.4){
+                check_ec = true;
+            } 
+            if (node.TDS >= 280 && node.TDS <= 1400) {
+                check_tds = true;
+            }
+            if (node.HUMI >= 40 && node.HUMI <= 80) {
+                check_humi = true;
+            }
             if (check_ec && check_temp && check_humi && check_tds){
                 result.payload = true;
-            }else {
+            } else {
                 result.payload = false;
             }
             node.send(result);
