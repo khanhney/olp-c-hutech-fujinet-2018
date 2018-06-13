@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('KiemTra',{
+        category: 'Function-contrib',
+        color: '#ffaaaa',
+        defaults: {
+            // numberMin: { value:0, validate:RED.validators.number() },
+            // numberMax: { value:0, validate:RED.validators.number() },
+            TEMP  : { value:0, validate:RED.validators.number() },
+            EC    : { value:0, validate:RED.validators.number() },
+            TDS   : { value:0, validate:RED.validators.number() },
+            HUMI  : { value:0, validate:RED.validators.number() },
+        },
+        inputs:1,
+        outputs:1,
+        icon: "face.png",
+        label: function() {
+            return this.name||"KiemTra";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="KiemTra">
+    <div class="form-row">
+        <label for="node-input-TEMP"><i class="icon-tag"></i> TEMP</label>
+        <input type="text" id="node-input-TEMP" placeholder="Nhập nhiệt độ kiểm tra..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-EC"><i class="icon-tag"></i> EC</label>
+        <input type="text" id="node-input-EC" placeholder="Nhập EC kiểm tra ..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-TDS"><i class="icon-tag"></i> TDS</label>
+        <input type="text" id="node-input-TDS" placeholder="Nhập TDS kiểm tra ..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-HUMI"><i class="icon-tag"></i> HUMI</label>
+        <input type="text" id="node-input-HUMI" placeholder="Nhập Độ Ẩm kiểm tra ..">
+    </div>
+
+</script>
+ 
+<script type="text/x-red" data-help-name="KiemTra">
+    <p>
+         Đây là một hàm hỗ trợ kiểm tra dữ liệu bao gồm 
+         TEMP, EC, TDS, HUMI với từng khoảng giá trị đã cho trước
+    </p>
+</script>

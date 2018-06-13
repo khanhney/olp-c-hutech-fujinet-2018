@@ -1,0 +1,19 @@
+{
+  "name": "red-contrib-khanhney-kiemtra",
+  "version": "1.0.0",
+  "description": "function check temp, ec, tds, humi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "sample": "src/app.js"
+    }
+  },
+  "author": "khanhney",
+  "license": "ISC"
+}
